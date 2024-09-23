@@ -1,0 +1,158 @@
+body{
+    background-color: rgb(213, 189, 189);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.loginHead{
+    height: 2rem;
+    border-radius: 0rem 0rem 0.5rem 0.5rem ;
+    color: whitesmoke;
+    background-color:rgb(114, 5, 117);
+    padding-top: 1rem;
+    padding-left: 3rem;
+}
+.section{
+    color: black;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    min-width: 20rem;
+    min-height: 20rem;
+    max-width: 20rem;
+    max-height: 20rem;
+    margin-left: 75vh;
+    margin-top: 25vh;
+}
+form{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform:uppercase;
+    letter-spacing: 0.1rem;
+}
+form label{
+    margin-bottom: 1rem;
+}
+form input{
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    color: black;
+    margin-bottom: 1rem;
+}
+.loginButton{
+    margin-top: 1rem;
+    min-width: 100;
+    max-width: 5rem;
+    height: 2rem;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    margin-left: 5.5rem;
+    background-color: green;
+    border: none;
+    border-radius: 0.2rem;
+    color: whitesmoke;
+}
+.loginButton:hover{
+    cursor: pointer;
+}
+.dashHead{
+    height: 2rem;
+    border-radius: 0rem 0rem 0.5rem 0.5rem ;
+    background-color:rgb(114, 5, 117);
+}
+.dashHead h2{
+    margin-top: -0.1rem;
+    color: whitesmoke;
+    max-width: 10rem;
+    margin-left: 5rem;
+    }
+.navBar ul{
+    color: whitesmoke;
+    margin-top: -2.2rem;
+    text-align: right;
+    list-style: none;
+    margin-inline: 1rem;
+}
+.navBar ul li{
+    display: inline;
+    padding: 0 0.4rem;
+} 
+.navBar ol{
+    color: whitesmoke;
+    margin-top: -2.4rem;
+    padding-left: 20rem;
+    text-align: left;
+    list-style: none;
+    margin-inline: 1rem;
+}
+.navBar ol li{
+    display: inline;
+    padding: 0 0.4rem;
+} 
+.createButton{
+    display: fixed;
+    text-align: center;
+    background-color: green;
+    border: none;
+    border-radius: 0.2em;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: whitesmoke;
+}
+.logout{
+    cursor: pointer;
+}
+table,th,td {
+    color: whitesmoke;
+    border: 1px solid green;
+}
+.tab{
+    margin: 3.5rem 0 0 3rem;
+}
+th,td{
+    padding: 1rem;
+}
+td button{
+    color: whitesmoke;
+    cursor: pointer;
+    background: none;
+    border: 1px solid green;
+}
+.dashh2{
+    margin-top: 5rem;
+    margin-left: 30rem;
+}
+.headEmp{
+    margin-left: 2rem;
+}
+.forms{
+    margin-top: 4rem;
+    margin-left: 30rem;
+    min-width: 10rem;
+    max-width: 20rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+.forms h3{
+    margin-left: 5rem;
+}
+.desig option{
+    padding: 2rem;
+    display: inherit;
+}
+.gender{
+    text-transform: capitalize;
+    margin-left: 0;
+    padding-top: 8px;
+}
+.count{
+    display: inline;
+    margin-left: 60rem;
+    padding-right: 2rem;
+}
+.image{
+    height: 3rem;
+    width: 3rem;
+}
