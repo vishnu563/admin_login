@@ -32,22 +32,25 @@ function Dashboard() {
 
     if (type === 'file') {
       setNewEmployee({ ...newEmployee, [name]: files[0] });
-    } else if (type === 'checkbox') {
+    } 
+    else if (type === 'checkbox') {
       if (checked) {
         setNewEmployee(prevState => ({
           ...prevState,
           course: [...prevState.course, value]
         }));
-      } else {
+      }
+      else {
         setNewEmployee(prevState => ({
           ...prevState,
           course: prevState.course.filter(course => course !== value)
         }));
       }
-    } else {
-      setNewEmployee({ ...newEmployee, [name]: value });
+      } 
+      else {
+        setNewEmployee({ ...newEmployee, [name]: value });
+      }
     }
-  }
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -56,7 +59,6 @@ function Dashboard() {
       alert('Please select at least one course');
       return;
     }
-
     if (newEmployee.name && newEmployee.email) {
       if (isEditing !== null) {
         const updatedEmployees = employees.map(employee => 
@@ -64,7 +66,8 @@ function Dashboard() {
         );
         setEmployees(updatedEmployees);
         setIsEditing(null);
-      } else {
+        } 
+      else {
         const nextId = employees.length > 0 ? Math.max(...employees.map(emp => emp.id)) + 1 : 1;
         setEmployees([...employees, { ...newEmployee, id: nextId }]);
       }
@@ -79,75 +82,73 @@ function Dashboard() {
         createDate: new Date().toLocaleDateString()
       });
       setShowForm(false);
-    } else {
-      alert('Please fill all required fields');
+      } 
+      else {
+        alert('Please fill all required fields');
+      }
     }
-  }
 
-  function addEmployee() {
-    setShowForm(true);
-  }
-
-  function handleLogout() {
-    const confirmLogout = window.confirm("Are you sure you want to log out?");
-    if (confirmLogout) {
-      navigate('/');
+    function addEmployee() {
+      setShowForm(true);
     }
-  }
 
-  function handleDelete(id) {
-    const updatedEmployees = employees.filter(employee => employee.id !== id);
-    setEmployees(updatedEmployees);
-  }
+    function handleLogout() {
+      const confirmLogout = window.confirm("Are you sure you want to log out?");
+      if (confirmLogout) {
+        navigate('/');
+      }
+    }
+
+    function handleDelete(id) {
+      const updatedEmployees = employees.filter(employee => employee.id !== id);
+      setEmployees(updatedEmployees);
+    }
   
 
-  function handleEdit(employee) {
-    setNewEmployee(employee);
-    setIsEditing(employee.id);
-    setShowForm(true);
-  }
-  function handleCancel() {
-    setNewEmployee({
-      id: '',
-      name: '',
-      email: '',
-      mobile: '',
-      designation: '',
-      gender: '',
-      course: [],
-      createDate: new Date().toLocaleDateString()
-    });
-    setShowForm(false);
-    setIsEditing(null);
-  }
+    function handleEdit(employee) {
+      setNewEmployee(employee);
+      setIsEditing(employee.id);
+      setShowForm(true);
+    }
+    function handleCancel() {
+      setNewEmployee({
+        id: '',
+        name: '',
+        email: '',
+        mobile: '',
+        designation: '',
+        gender: '',
+        course: [],
+        createDate: new Date().toLocaleDateString()
+      });
+      setShowForm(false);
+      setIsEditing(null);
+    }
 
   return (
     <>
-      <header className='dashHead'>
+      <header className='head'>
         <h2>Dash Board</h2>
         <nav className='navBar'>
-          <ol>
+          <ul className='navBar-list'>
             <li>Home</li>
             <li>Employee List</li>
-          </ol>
-          <ul>
             <li>{username}</li>
             <li className='logout' onClick={handleLogout}>Logout</li>
           </ul>
         </nav>
-        {!showForm && <p className='count'>Total Count : {employees.length}</p>}
-        <button className='createButton' onClick={addEmployee}>Create Employee +</button>
+        <div className='count'>{!showForm && <p className='count'>Total Count : {employees.length}</p>}</div>
       </header>
 
       <main>
+        <div><button className='createButton' onClick={addEmployee}>Create Employee +</button></div>
         {!showForm && employees.length === 0 ? (
-          <h2 className='dashh2'>Welcome Admin Panel!</h2>
+          <h2 className='adminHead'>Welcome Admin Panel!</h2>
         ) : (
           <div>
             {showForm ? (
-              <div className='forms'>
                 <div className="employee-form">
-                  <h3 className='headEmp'>{isEditing ? "Edit Employee" : "Add New Employee"}</h3>
+                  <h3 className='employee-head'>{isEditing ? "Edit Employee" : "Add New Employee"}</h3>
                   <form onSubmit={handleFormSubmit}>
                     <input
                       type="text"
@@ -176,7 +177,7 @@ function Dashboard() {
                       required
                     />
 
-                    <div className='desig'>
+                    <div className='designation'>
                       <select name="designation" value={newEmployee.designation} onChange={handleInputChange} required>
                         <option value="" disabled>Designation</option>
                         <option value="HR">HR</option>
@@ -236,14 +237,15 @@ function Dashboard() {
                         BSC
                       </label>
                     </div>
+                    <div>
                     <button type="submit">{isEditing ? "Update" : "Submit"}</button>
-                    <button type="button" onClick={handleCancel}>Cancel</button> 
+                    <button type="button" onClick={handleCancel}>Cancel</button>
+                    </div> 
                   </form>
                 </div>
-              </div>
             ) : (
               employees.length > 0 && (
-                <table className='tab'>
+                <table className='employee-table'>
                   <thead>
                     <tr>
                       <th>Employee Id</th>

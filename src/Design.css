@@ -1,67 +1,166 @@
-body{
-    background-color: rgb(213, 189, 189);
-    margin: 0;
-    padding: 0;
+*{
     box-sizing: border-box;
 }
-.loginHead{
-    height: 2rem;
-    border-radius: 0rem 0rem 0.5rem 0.5rem ;
-    color: whitesmoke;
-    background-color:rgb(114, 5, 117);
-    padding-top: 1rem;
-    padding-left: 3rem;
-}
-.section{
-    color: black;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 0.5rem;
-    min-width: 20rem;
-    min-height: 20rem;
-    max-width: 20rem;
-    max-height: 20rem;
-    margin-left: 75vh;
-    margin-top: 25vh;
-}
-form{
-    padding: 2rem;
+body{
+    background-color: rgb(213, 189, 189);
+    background-image: url(./bg.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
+    min-height: 100%;
+    margin: 7rem 15rem;
+}
+.container{
+    position: relative;
+    width: 48rem;
+    max-width: 100%;
+    min-height: 30rem;
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 1.5rem rgba(0,0,0,0.25),
+                0 1rem 1.5rem rgba(0,0,0,0.22);
+}
+.sign-up, .sign-in{
+   position: absolute; 
+   top: 0;
+   left: 0;
+   height: 100%;
+   transition: all 0.6s ease-in-out;
+}
+.sign-up{
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+.sign-in{
+    width: 50%;
+    z-index: 2;
+}
+form{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    text-transform:uppercase;
-    letter-spacing: 0.1rem;
+    text-align: center;
+    padding: 0 3rem;
+    height: 100%;
 }
-form label{
-    margin-bottom: 1rem;
+h1{
+   font-weight: bold;
+   margin: 0;
+   padding-bottom: 2rem; 
 }
-form input{
+p{
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.25rem;
+    letter-spacing: 0.04rem;
+    margin: 1rem 0 1.25rem;
+}
+input{
+    background: whitesmoke;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 0.25rem;
     border: none;
-    border-radius: 0.3rem;
-    padding: 0.3rem;
-    color: black;
-    margin-bottom: 1rem;
+    outline: none;
 }
-.loginButton{
-    margin-top: 1rem;
-    min-width: 100;
-    max-width: 5rem;
-    height: 2rem;
-    text-transform: inherit;
-    letter-spacing: inherit;
-    margin-left: 5.5rem;
-    background-color: green;
-    border: none;
-    border-radius: 0.2rem;
-    color: whitesmoke;
+a{
+    color: darkslategray;
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 1rem 0;
 }
-.loginButton:hover{
+button{
+    color: white;
+    background: black;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.75rem 3.5rem;
+    margin: 1.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid black;
+    outline: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 80ms ease-in;
     cursor: pointer;
 }
-.dashHead{
-    height: 2rem;
-    border-radius: 0rem 0rem 0.5rem 0.5rem ;
-    background-color:rgb(114, 5, 117);
+button:active{
+    transform: scale(0.90);
 }
+#signIn,#signUp{
+    background-color: transparent;
+    border: 2px solid white;
+}
+.container.right-panel-active .sign-ip{
+    transform: translateX(100%);
+}
+.container.right-panel-active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+.overlay-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+.container.right-panel-active .overlay-container{
+    transform: translateX(-100%);
+}
+.overlay{
+    position: relative;
+    color: white;
+    background: orangered;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    background: linear-gradient(to right,orangered,#a70d86);
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+.container.right-panel-active .overlay{
+    transform: translateX(50%);
+}
+.overlay-left, .overlay-right{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 2.5rem;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+.overlay-left{
+    transform: translateX(-20%);
+}
+.overlay-right{
+    right: 0;
+    transform: translateX(0);
+}
+.container.right-panel-active .overlay-left{
+    transform: translateX(0);
+}
+.container.right-panel-active .overlay-right{
+    transform: translateX(20%);
+}
+
 .dashHead h2{
     margin-top: -0.1rem;
     color: whitesmoke;
@@ -155,4 +254,4 @@ td button{
 .image{
     height: 3rem;
     width: 3rem;
-}
+} 
