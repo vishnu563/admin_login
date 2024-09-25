@@ -31,7 +31,6 @@ function Login() {
     return (
         <div className={`container ${isSignUp ? "right-panel-active" : ""}`} id="main">
             <main>
-
                 <section className="sign-up">
                     <form onSubmit={handleSignUpSubmit}>
                         <h1>Create Account</h1>
@@ -93,7 +92,7 @@ function Login() {
                             required
                         />
                         <a href="#">Forgot Your Password?</a>
-                        <div className="signin-button"><button type="submit">Sign In</button></div>
+                        <div className="signin-button"><button type="submit">SignIn</button></div>
                     </form>
                 </section>
 

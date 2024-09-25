@@ -8,13 +8,12 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100%;
-    margin: 7rem 15rem;
+    margin: 7rem 40vw;
 }
 .container{
     position: relative;
-    width: 48rem;
     max-width: 100%;
     min-height: 30rem;
     background: white;
@@ -98,8 +97,8 @@ button:active{
     background-color: transparent;
     border: 2px solid white;
 }
-.container.right-panel-active .sign-ip{
-    transform: translateX(100%);
+.container.right-panel-active .sign-in{
+    transform: translateX(0);
 }
 .container.right-panel-active .sign-up{
     transform: translateX(100%);
@@ -161,97 +160,94 @@ button:active{
     transform: translateX(20%);
 }
 
-.dashHead h2{
-    margin-top: -0.1rem;
-    color: whitesmoke;
-    max-width: 10rem;
-    margin-left: 5rem;
+@media screen and (min-width:1025px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
+    .container{
+        min-width: 70rem;
+    }  
+}
+@media screen and (min-width:990px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        max-height: 65vh;
+    }  
+    .container{
+        min-width: 48rem;
     }
-.navBar ul{
-    color: whitesmoke;
-    margin-top: -2.2rem;
-    text-align: right;
-    list-style: none;
-    margin-inline: 1rem;
 }
-.navBar ul li{
-    display: inline;
-    padding: 0 0.4rem;
-} 
-.navBar ol{
-    color: whitesmoke;
-    margin-top: -2.4rem;
-    padding-left: 20rem;
-    text-align: left;
-    list-style: none;
-    margin-inline: 1rem;
+@media screen and (min-width:760px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        max-height: 65vh;
+    } 
+    .container{
+        width: 40rem;
+        max-width: 100%;
+        min-height: 30rem;
+    } 
 }
-.navBar ol li{
-    display: inline;
-    padding: 0 0.4rem;
-} 
-.createButton{
-    display: fixed;
-    text-align: center;
-    background-color: green;
-    border: none;
-    border-radius: 0.2em;
-    padding: 0.5rem;
-    cursor: pointer;
-    color: whitesmoke;
+@media screen and (max-width:759px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
+    .container{
+        display: flex;
+        width: 18rem;
+        max-width: 100%;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        margin: auto;
+    }
+    .sign-up{
+        width: 100%;
+        opacity: 0;
+        z-index: 1;
+    }
+    .sign-in{
+        width: 100%;
+        z-index: 2;
+    }
+    #signIn,#signUp{
+        background-color: black;
+        border: 2px solid white;
+        top: 1rem;
+        right: 1rem;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        margin: 0.5rem;
+        position: fixed;
+    }
+    .container.right-panel-active .sign-in{
+        transform: translateY(100%);
+        opacity: 1;
+        z-index: 5;
+    }
+    .container.right-panel-active .sign-up{
+        transform: translateY(0);
+    }
+    .overlay-container{
+        height: 5rem;
+    }
+    .overlay-container h1,p {
+        display: none;
+    }
+    .overlay{
+        position: absolute;
+        color: white;
+        background:white;
+    }
 }
-.logout{
-    cursor: pointer;
-}
-table,th,td {
-    color: whitesmoke;
-    border: 1px solid green;
-}
-.tab{
-    margin: 3.5rem 0 0 3rem;
-}
-th,td{
-    padding: 1rem;
-}
-td button{
-    color: whitesmoke;
-    cursor: pointer;
-    background: none;
-    border: 1px solid green;
-}
-.dashh2{
-    margin-top: 5rem;
-    margin-left: 30rem;
-}
-.headEmp{
-    margin-left: 2rem;
-}
-.forms{
-    margin-top: 4rem;
-    margin-left: 30rem;
-    min-width: 10rem;
-    max-width: 20rem;
-    border: 2px solid black;
-    border-radius: 1rem;
-}
-.forms h3{
-    margin-left: 5rem;
-}
-.desig option{
-    padding: 2rem;
-    display: inherit;
-}
-.gender{
-    text-transform: capitalize;
-    margin-left: 0;
-    padding-top: 8px;
-}
-.count{
-    display: inline;
-    margin-left: 60rem;
-    padding-right: 2rem;
-}
-.image{
-    height: 3rem;
-    width: 3rem;
-} 
