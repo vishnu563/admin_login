@@ -7,7 +7,7 @@ function Login() {
     const [signUpPassword, setSignUpPassword] = useState("");
     const [signinUsername, setSigninUsername] = useState("");
     const [signinPassword, setSigninPassword] = useState("");
-    const [isSignUp, setIsSignUp] = useState(true);
+    const [isSignUp, setIsSignUp] = useState(false);
     const navigate = useNavigate();
 
     function handleSignUpSubmit(e) {
@@ -65,7 +65,7 @@ function Login() {
                             minLength={8}
                             required
                         />
-                        <div className="signup-button"><button type="submit">Signup</button></div>
+                        <button id='signup-button' type="submit">Signup</button>
                     </form>
                 </section>
 
@@ -91,8 +91,7 @@ function Login() {
                             minLength={8}
                             required
                         />
-                        <a href="#">Forgot Your Password?</a>
-                        <div className="signin-button"><button type="submit">SignIn</button></div>
+                        <button id='signin-button' type="submit">SignIn</button>
                     </form>
                 </section>
 

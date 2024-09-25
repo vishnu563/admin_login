@@ -9,8 +9,7 @@ body{
     background-size: cover;
     display: flex;
     flex-direction: row;
-    min-height: 100%;
-    margin: 7rem 40vw;
+    margin: 7rem;
 }
 .container{
     position: relative;
@@ -69,18 +68,13 @@ input{
     border: none;
     outline: none;
 }
-a{
-    color: darkslategray;
-    font-size: 1rem;
-    text-decoration: none;
-    margin: 1rem 0;
-}
+
 button{
     color: white;
     background: black;
     font-size: 0.75rem;
     font-weight: bold;
-    padding: 0.75rem 3.5rem;
+    padding: 0.2rem 1rem;
     margin: 1.25rem;
     border-radius: 1.25rem;
     border: 1px solid black;
@@ -89,6 +83,9 @@ button{
     text-transform: uppercase;
     transition: 80ms ease-in;
     cursor: pointer;
+}
+#signup-button, #signin-button{
+    padding: 0.75rem 3rem;
 }
 button:active{
     transform: scale(0.90);
@@ -159,7 +156,6 @@ button:active{
 .container.right-panel-active .overlay-right{
     transform: translateX(20%);
 }
-
 @media screen and (min-width:1025px) {
     body{
         display: flex;
